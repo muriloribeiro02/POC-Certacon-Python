@@ -1,10 +1,11 @@
 from flask import Flask, render_template, redirect, url_for, request, jsonify
 import sqlite3
 import os
-
 from extrair import ExtrairArquivofuncao
 
 app = Flask(__name__)
+
+
 
 @app.route('/')
 def index():
@@ -68,6 +69,7 @@ def DeletarDadosTabela():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 
 if __name__ == '__main__':
